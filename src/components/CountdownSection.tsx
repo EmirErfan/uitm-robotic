@@ -5,7 +5,7 @@ const CountdownSection: React.FC = () => {
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
   });
 
   useEffect(() => {
@@ -41,12 +41,12 @@ const CountdownSection: React.FC = () => {
   return (
     <section id="countdown" className="py-20 scroll-mt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center justify-center">
 
           {/* Registration Timer */}
-          <div className="p-8 rounded-2xl border border-red-500/30 bg-white/5 backdrop-blur-md">
+          <div className="w-full p-8 rounded-2xl border border-red-500/30 bg-white/5 backdrop-blur-md">
             <h3 className="text-2xl font-bold text-white mb-6 text-center">Registration</h3>
-            <div className="flex justify-center gap-4 mb-6">
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
               <TimeBox value={0} label="Days" />
               <TimeBox value={0} label="Hours" />
               <TimeBox value={0} label="Min" />
@@ -56,9 +56,9 @@ const CountdownSection: React.FC = () => {
           </div>
 
           {/* Competition Timer */}
-          <div className="p-8 rounded-2xl border border-purple-500/30 bg-white/5 backdrop-blur-md">
+          <div className="w-full p-8 rounded-2xl border border-purple-500/30 bg-white/5 backdrop-blur-md">
             <h3 className="text-2xl font-bold text-white mb-6 text-center">Competition</h3>
-            <div className="flex justify-center gap-4 mb-6">
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
               <TimeBox value={timeLeft.days} label="Days" />
               <TimeBox value={timeLeft.hours} label="Hours" />
               <TimeBox value={timeLeft.minutes} label="Min" />

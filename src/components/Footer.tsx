@@ -2,12 +2,29 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   const sponsors = [
-    { name: 'UiTM', logo: 'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Ministry of Education', logo: 'https://images.pexels.com/photos/7688460/pexels-photo-7688460.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Tech Sponsor', logo: 'https://images.pexels.com/photos/7688464/pexels-photo-7688464.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Innovation Hub', logo: 'https://images.pexels.com/photos/7688484/pexels-photo-7688484.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Robotics Corp', logo: 'https://images.pexels.com/photos/7688493/pexels-photo-7688493.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
+    {
+      name: 'Sponsor 1',
+      logo: 'https://i.pinimg.com/736x/26/db/8e/26db8e1bc9a0eb238e69ae7d01a24fee.jpg',
+    },
+    {
+      name: 'Sponsor 2',
+      logo: 'https://www.shutterstock.com/shutterstock/photos/2286554497/display_1500/stock-photo-random-pictures-cute-and-funny-2286554497.jpg',
+    },
+    {
+      name: 'Sponsor 3',
+      logo: 'https://i.redd.it/tvvggar2j4aa1.png',
+    },
+    {
+      name: 'Sponsor 4',
+      logo: 'https://i.ytimg.com/vi/bokJfDZCzNk/maxresdefault.jpg',
+    },
+    {
+      name: 'Sponsor 5',
+      logo: 'https://i.redd.it/ah-yes-enslaved-x-enslaved-moisture-hd-templates-1896x1736-v0-v56dekj6jye91.png?width=1896&format=png&auto=webp&s=37b586d82a3291077bfa48d6d309ffe1cb8e6d84',
+    },
   ];
+
+  const isOdd = sponsors.length % 2 === 1;
 
   return (
     <footer className="py-20 bg-white/5 backdrop-blur-md border-t border-purple-500/20">
@@ -17,7 +34,11 @@ const Footer: React.FC = () => {
             Our <span className="text-yellow-400 neon-glow">Partners</span>
           </h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+          <div
+            className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 ${
+              isOdd ? 'justify-items-center' : ''
+            }`}
+          >
             {sponsors.map((sponsor, index) => (
               <div
                 key={index}
@@ -35,18 +56,10 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">&copy; 2024 UiTM Robotic Competition. All rights reserved.</p>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
-                Contact Us
-              </a>
-            </div>
+            <p className="text-gray-400 text-sm">
+              &copy; Testing...
+            </p>
+            
           </div>
         </div>
       </div>
