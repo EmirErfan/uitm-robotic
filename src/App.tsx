@@ -10,15 +10,41 @@ import SupportSection from './components/SupportSection';
 import SocialMediaSection from './components/SocialMediaSection';
 import Footer from './components/Footer';
 
+// ✅ Intro splash screen with fade in/out
+const IntroScreen: React.FC<{ fadeOut: boolean }> = ({ fadeOut }) => {
+  return (
+    <div
+      className={`fixed inset-0 z-50 bg-black flex items-center justify-center transition-opacity duration-1000 ${
+        fadeOut ? 'opacity-0' : 'opacity-100'
+      }`}
+    >
+      <h1 className="text-5xl md:text-6xl font-monoton text-yellow-400 animate-pulse text-center">
+        UiTM Robotic Competition
+      </h1>
+    </div>
+  );
+};
+
 function App() {
   const [scrollDarkness, setScrollDarkness] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // ✅ Track mobile menu state
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
+  const [fadeOutIntro, setFadeOutIntro] = useState(false);
+
+  // Fade in/out logic
+  useEffect(() => {
+    const timer1 = setTimeout(() => setFadeOutIntro(true), 2000); // Start fade out
+    const timer2 = setTimeout(() => setShowIntro(false), 3000); // Remove from DOM
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-
       const darkness = Math.min(scrollY / documentHeight, 1);
       setScrollDarkness(darkness);
     };
@@ -29,12 +55,14 @@ function App() {
 
   return (
     <div className="relative min-h-screen text-white overflow-x-hidden">
+      {/* Splash Screen with fade effect */}
+      {showIntro && <IntroScreen fadeOut={fadeOutIntro} />}
 
       {/* BACKGROUND IMAGE */}
       <div
         className="fixed inset-0 -z-50 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://media.istockphoto.com/id/1345991634/photo/artificial-intelligence-3d-robot-hand-finger-pointing-in-futuristic-cyber-space-metaverse.jpg?s=612x612&w=0&k=20&c=Xy_Bk8cNVi0U0EF8mXEW1_hIobDu6CU6xgb3nnkMUQw=')`,
+          backgroundImage: `url('https://wallpapers.com/images/high/cyberpunk-pixel-art-1920-x-1080-ayd6wbgj44ideufx.webp')`,
           backgroundAttachment: 'fixed',
           transform: 'scale(1.1)',
         }}
@@ -53,19 +81,20 @@ function App() {
       <div className="fixed inset-0 -z-30 bg-gradient-to-br from-purple-900/40 via-purple-800/30 to-black/30 pointer-events-none" />
 
       {/* PAGE CONTENT */}
-      <div className="relative z-10">
-        {/* ✅ PASS STATE PROPERLY TO Navigation */}
-        <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-        <HeroSection />
-        <IntroductionSection />
-        <CountdownSection />
-        <ParticipationOverview />
-        <TentativeTimeline />
-        <CategoriesSection />
-        <SupportSection />
-        <SocialMediaSection />
-        <Footer />
-      </div>
+      {!showIntro && (
+        <div className="relative z-10">
+          <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+          <HeroSection introFinished={!showIntro} />
+          <IntroductionSection />
+          <CountdownSection />
+          <ParticipationOverview />
+          <TentativeTimeline />
+          <CategoriesSection />
+          <SupportSection />
+          <SocialMediaSection />
+          <Footer />
+        </div>
+      )}
     </div>
   );
 }

@@ -50,7 +50,7 @@ const CategoriesSection: React.FC = () => {
   return (
     <section className="py-20 bg-transparent" id="categories">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-4">
+        <h2 className="text-4xl md:text-5xl font-monoton text-center text-white mb-4">
           Competition{' '}
           <span className="text-yellow-400">Categories</span>
         </h2>

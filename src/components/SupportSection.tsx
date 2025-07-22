@@ -5,7 +5,7 @@ const SupportSection: React.FC = () => {
   return (
     <section className="py-20" id="support">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h2 className="text-4xl md:text-5xl font-monoton text-white mb-4">
           Support <span className="text-yellow-400">Centre</span>
         </h2>
 

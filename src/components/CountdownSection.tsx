@@ -45,19 +45,19 @@ const CountdownSection: React.FC = () => {
 
           {/* Registration Timer */}
           <div className="w-full p-8 rounded-2xl border border-red-500/30 bg-white/5 backdrop-blur-md">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">Registration</h3>
+            <h3 className="text-2xl font-monoton text-white mb-6 text-center">Registration</h3>
             <div className="flex flex-wrap justify-center gap-4 mb-6">
               <TimeBox value={0} label="Days" />
               <TimeBox value={0} label="Hours" />
               <TimeBox value={0} label="Min" />
               <TimeBox value={0} label="Sec" />
             </div>
-            <p className="text-center text-red-400 font-semibold text-lg">Registration Closed</p>
+            <p className="text-center text-green-400 font-semibold text-lg">Registration Open</p>
           </div>
 
           {/* Competition Timer */}
           <div className="w-full p-8 rounded-2xl border border-purple-500/30 bg-white/5 backdrop-blur-md">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">Competition</h3>
+            <h3 className="text-2xl font-monoton text-white mb-6 text-center">Competition</h3>
             <div className="flex flex-wrap justify-center gap-4 mb-6">
               <TimeBox value={timeLeft.days} label="Days" />
               <TimeBox value={timeLeft.hours} label="Hours" />

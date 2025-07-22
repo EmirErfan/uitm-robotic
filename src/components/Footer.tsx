@@ -30,8 +30,8 @@ const Footer: React.FC = () => {
     <footer className="py-20 bg-white/5 backdrop-blur-md border-t border-purple-500/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 glow-text">
-            Our <span className="text-yellow-400 neon-glow">Partners</span>
+          <h3 className="text-3xl md:text-4xl font-monoton text-white mb-8 glow-text">
+            Our <span className="text-yellow-400">Partners</span>
           </h3>
 
           <div

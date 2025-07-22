@@ -11,7 +11,7 @@ const ParticipationOverview: React.FC = () => {
   return (
     <section className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-4">
+        <h2 className="text-4xl md:text-5xl font-monoton text-center text-white mb-4">
           Participation <span className="text-yellow-400">Overview</span>
         </h2>
 

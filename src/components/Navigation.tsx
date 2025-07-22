@@ -38,8 +38,6 @@ const Navigation: React.FC<NavigationProps> = ({ isMenuOpen, setIsMenuOpen }) =>
                 {item}
               </a>
             ))}
-
-            {/* Registration Status */}
             <span className="ml-4 px-4 py-1 rounded-full text-sm font-medium bg-green-600/70 border border-green-500/40 text-white shadow-green-500/40 shadow-sm">
               Registration is Open
             </span>
@@ -49,23 +47,21 @@ const Navigation: React.FC<NavigationProps> = ({ isMenuOpen, setIsMenuOpen }) =>
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`text-white transition-transform duration-300 ${
-                isMenuOpen ? 'rotate-90' : ''
-              }`}
+              className={`text-white transition-transform duration-300 ${isMenuOpen ? 'rotate-90' : ''}`}
             >
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Navigation Menu */}
-        <div
-          className={`md:hidden overflow-hidden transform transition-all duration-500 ease-in-out origin-top ${
-            isMenuOpen
-              ? 'max-h-[500px] scale-100 opacity-100 mt-4'
-              : 'max-h-0 scale-95 opacity-0'
-          } rounded-xl bg-black/70 backdrop-blur-lg border border-white/10 shadow-lg px-4 py-4 space-y-3`}
-        >
+      {/* Mobile Navigation Menu */}
+      <div
+        className={`md:hidden fixed top-16 left-0 w-full z-40 transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+        } overflow-hidden`}
+      >
+        <div className="bg-black/80 backdrop-blur-md border-t border-white/10 px-6 py-6 space-y-4 max-h-[80vh] overflow-y-auto">
           {menuItems.map((item) => (
             <a
               key={item}

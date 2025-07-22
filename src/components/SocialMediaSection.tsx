@@ -14,8 +14,8 @@ const SocialMediaSection: React.FC = () => {
   return (
     <section className="py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 glow-text">
-          Follow <span className="text-yellow-400 neon-glow">Us</span>
+        <h2 className="text-4xl md:text-5xl font-monoton text-white mb-12">
+          Follow <span className="text-yellow-400">Us</span>
         </h2>
 
         <div className="flex justify-center items-center gap-8 flex-wrap">
