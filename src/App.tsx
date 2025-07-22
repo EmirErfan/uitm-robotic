@@ -10,6 +10,7 @@ import SupportSection from './components/SupportSection';
 import SocialMediaSection from './components/SocialMediaSection';
 import Footer from './components/Footer';
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 
 // ✅ Intro splash screen with fade in/out
 const IntroScreen: React.FC<{ fadeOut: boolean }> = ({ fadeOut }) => {
@@ -95,6 +96,7 @@ function App() {
           <SocialMediaSection />
           <Footer />
           <SpeedInsights/>
+          <Analytics/>
         </div>
       )}
     </div>
