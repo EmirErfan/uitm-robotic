@@ -32,7 +32,7 @@ const SocialMediaSection: React.FC = () => {
                   border border-white/10 
                   rounded-full 
                   flex items-center justify-center 
-                  ${social.color} 
+                  ${social.color}
                   ${social.hoverColor} 
                   transition-all duration-300 
                   hover:scale-110 
